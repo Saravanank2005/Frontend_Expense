@@ -13,10 +13,9 @@ function App() {
     { id: 4, title: "dress", amount: -1500 },
   ]);
 
-  useEffect(() => {
-    console.log("Hello")
-    fetch("http://localhost:8000")
-  }, []);
+  useEffect(()=>{
+    fetch('https://mern-back-end-1z43.onrender.com/api/expensesAll').then(res=>res.json()).then(data=>console.log(data))
+  })
 
   const onDeleteTransaction = (id) => {
     setTransactions(transactions.filter((transaction) => transaction.id !== id));
